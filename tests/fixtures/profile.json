@@ -1,0 +1,172 @@
+{
+  "schema_version": 1,
+  "username": "michaelkandziora",
+  "title": "{{username}}@github",
+  "art": "assets/portrait.txt",
+  "layout": {
+    "gap": 4,
+    "label_width": 18,
+    "rule_width": 48,
+    "top_padding": 1
+  },
+  "stats": {
+    "exclude_forks": true,
+    "days": 365
+  },
+  "code": {
+    "enabled": false,
+    "repositories": [],
+    "exclude_archived": true,
+    "max_repositories": 40,
+    "max_repository_kib": 200000,
+    "timeout_seconds": 180,
+    "exclude_dirs": [
+      "node_modules",
+      "vendor",
+      "dist",
+      "build",
+      ".venv",
+      "venv",
+      "__pycache__"
+    ],
+    "exclude_files": [
+      "package-lock.json",
+      "yarn.lock",
+      "pnpm-lock.yaml",
+      "poetry.lock",
+      "uv.lock"
+    ]
+  },
+  "sections": [
+    {
+      "id": "system",
+      "title": "",
+      "rows": [
+        {
+          "id": "os",
+          "key": "OS",
+          "value": "HUMAN OS"
+        },
+        {
+          "id": "uptime",
+          "key": "Uptime",
+          "value": "10331 days"
+        },
+        {
+          "id": "host",
+          "key": "Host",
+          "value": "127.0.0.1"
+        },
+        {
+          "id": "kernel",
+          "key": "Kernel",
+          "value": "human_os-intj_a-xy-v247"
+        },
+        {
+          "id": "ide",
+          "key": "IDE",
+          "value": "vscode"
+        }
+      ]
+    },
+    {
+      "id": "languages",
+      "title": "Languages",
+      "rows": [
+        {
+          "id": "programming",
+          "key": "Programming",
+          "value": "C++, C, Java, Python, JS/TS, .."
+        },
+        {
+          "id": "system_languages",
+          "key": "System",
+          "value": "Bash, Powershell, Perl"
+        },
+        {
+          "id": "human",
+          "key": "Human",
+          "value": "German, Polish, English"
+        }
+      ]
+    },
+    {
+      "id": "hobbies",
+      "title": "Hobbies",
+      "rows": [
+        {
+          "id": "software",
+          "key": "Software",
+          "value": "coding, exploring,"
+        },
+        {
+          "id": "hardware",
+          "key": "Hardware",
+          "value": "electrical engineering, soldering"
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "title": "Contact",
+      "rows": [
+        {
+          "id": "email",
+          "key": "Email",
+          "value": "michael@domtec.io"
+        },
+        {
+          "id": "linkedin",
+          "key": "LinkedIn",
+          "value": "michaelkandziora"
+        },
+        {
+          "id": "website",
+          "key": "Website",
+          "value": ""
+        },
+        {
+          "id": "discord",
+          "key": "Discord",
+          "value": "<DISCORD>"
+        }
+      ]
+    },
+    {
+      "id": "github",
+      "title": "GitHub Stats",
+      "rows": [
+        {
+          "id": "repos",
+          "key": "Repos",
+          "value": "{{stats.repos}}  {Commit repos / 365d: {{stats.contributed_repos_365d}}}"
+        },
+        {
+          "id": "commits",
+          "key": "Commits (365d)",
+          "value": "{{stats.commits_365d}}"
+        },
+        {
+          "id": "stars",
+          "key": "Stars",
+          "value": "{{stats.stars}}"
+        },
+        {
+          "id": "followers",
+          "key": "Followers",
+          "value": "{{stats.followers}}"
+        },
+        {
+          "id": "pull_requests",
+          "key": "Pull Requests",
+          "value": "{{stats.pull_requests}}"
+        },
+        {
+          "id": "loc",
+          "key": "Lines of Code",
+          "value": "{{stats.loc}}  {+{{stats.added}} -{{stats.removed}}}"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+name: Update profile README
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 3 * * *'
+  push:
+    branches: [main]
+    paths:
+      - profile.json
+      - assets/**
+      - profile.py
+      - profile_tool/**
+      - .github/workflows/update-readme.yml
+
+permissions:
+  contents: read
+
+concurrency:
+  group: profile-readme-update
+  cancel-in-progress: false
+
+jobs:
+  update:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: write
+    steps:
+      - name: Check out current main
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          ref: main
+          persist-credentials: true
+
+      - name: Set up Python
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7
+        with:
+          python-version: '3.13'
+
+      - name: Run offline tests
+        run: python -m unittest discover -s tests -v
+
+      - name: Read optional code-scan setting
+        id: settings
+        run: |
+          python - <<'PY' >> "$GITHUB_OUTPUT"
+          from pathlib import Path
+          from profile_tool.model import load_config
+          enabled = load_config(Path('.'))['code']['enabled']
+          print('code_enabled=' + str(enabled).lower())
+          PY
+
+      - name: Install cloc only for enabled code scans
+        if: steps.settings.outputs.code_enabled == 'true'
+        run: |
+          sudo apt-get update
+          sudo apt-get install --yes --no-install-recommends cloc
+
+      - name: Refresh public statistics and generate README
+        env:
+          # Optional dedicated API token. Git pushes still use the repository's GITHUB_TOKEN.
+          GH_TOKEN: ${{ secrets.PROFILE_STATS_TOKEN || github.token }}
+        run: |
+          python profile.py update
+          python profile.py check
+
+      - name: Commit only generated files when they changed
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- README.md README.template.md .profile/stats.json
+          if git diff --cached --quiet; then
+            echo 'No generated changes.'
+            exit 0
+          fi
+          git commit -m 'chore: refresh profile statistics'
+          # Deliberately no force-push or blind rebase. Rerun after a concurrent human push.
+          git push origin HEAD:main
