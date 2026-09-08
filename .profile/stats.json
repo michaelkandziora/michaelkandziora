@@ -1,6 +1,93 @@
 {
   "schema_version": 1,
   "username": "michaelkandziora",
-  "metrics": {},
-  "last_attempt": null
+  "metrics": {
+    "followers": {
+      "value": 0,
+      "status": "ok",
+      "updated_at": "2026-09-08"
+    },
+    "following": {
+      "value": 0,
+      "status": "ok",
+      "updated_at": "2026-09-08"
+    },
+    "public_gists": {
+      "value": 1,
+      "status": "ok",
+      "updated_at": "2026-09-08"
+    },
+    "repos": {
+      "value": 8,
+      "status": "ok",
+      "updated_at": "2026-09-08"
+    },
+    "stars": {
+      "value": 0,
+      "status": "ok",
+      "updated_at": "2026-09-08"
+    },
+    "commits_365d": {
+      "value": 0,
+      "status": "ok",
+      "updated_at": "2026-09-08"
+    },
+    "contributed_repos_365d": {
+      "value": 0,
+      "status": "ok",
+      "updated_at": "2026-09-08"
+    },
+    "pull_requests": {
+      "value": null,
+      "status": "missing",
+      "updated_at": null,
+      "error": "GitHub HTTP 422; check token permissions, rate limits and repository access."
+    },
+    "removed": {
+      "value": null,
+      "status": "disabled",
+      "updated_at": null
+    },
+    "loc": {
+      "value": null,
+      "status": "disabled",
+      "updated_at": null
+    },
+    "added": {
+      "value": null,
+      "status": "disabled",
+      "updated_at": null
+    }
+  },
+  "last_attempt": "2026-09-08",
+  "settings": {
+    "stats": {
+      "exclude_forks": true,
+      "days": 365
+    },
+    "code": {
+      "enabled": false,
+      "repositories": [],
+      "exclude_archived": true,
+      "max_repositories": 40,
+      "max_repository_kib": 200000,
+      "timeout_seconds": 180,
+      "exclude_dirs": [
+        "node_modules",
+        "vendor",
+        "dist",
+        "build",
+        ".venv",
+        "venv",
+        "__pycache__"
+      ],
+      "exclude_files": [
+        "package-lock.json",
+        "yarn.lock",
+        "pnpm-lock.yaml",
+        "poetry.lock",
+        "uv.lock"
+      ]
+    }
+  }
 }
