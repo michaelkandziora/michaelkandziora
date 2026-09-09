@@ -103,3 +103,5 @@
       -+                                                                        -.
       -#                                                                        +#
 ```
+
+[Stats definitions](docs/METRICS.md) · Public data only · `n/a`: unavailable or disabled · `*`: last successful value; see `.profile/stats.json`.
