@@ -5,48 +5,43 @@
     "followers": {
       "value": 0,
       "status": "ok",
-      "updated_at": "2026-09-19"
+      "updated_at": "2026-09-20"
     },
     "following": {
       "value": 0,
       "status": "ok",
-      "updated_at": "2026-09-19"
+      "updated_at": "2026-09-20"
     },
     "public_gists": {
       "value": 1,
       "status": "ok",
-      "updated_at": "2026-09-19"
+      "updated_at": "2026-09-20"
     },
     "repos": {
       "value": 7,
       "status": "ok",
-      "updated_at": "2026-09-19"
+      "updated_at": "2026-09-20"
     },
     "stars": {
       "value": 0,
       "status": "ok",
-      "updated_at": "2026-09-19"
+      "updated_at": "2026-09-20"
     },
     "commits_365d": {
       "value": 0,
       "status": "ok",
-      "updated_at": "2026-09-19"
+      "updated_at": "2026-09-20"
     },
     "contributed_repos_365d": {
       "value": 0,
       "status": "ok",
-      "updated_at": "2026-09-19"
+      "updated_at": "2026-09-20"
     },
     "pull_requests": {
       "value": null,
       "status": "missing",
       "updated_at": null,
       "error": "GitHub HTTP 422; check token permissions, rate limits and repository access."
-    },
-    "added": {
-      "value": null,
-      "status": "disabled",
-      "updated_at": null
     },
     "loc": {
       "value": null,
@@ -57,9 +52,14 @@
       "value": null,
       "status": "disabled",
       "updated_at": null
+    },
+    "added": {
+      "value": null,
+      "status": "disabled",
+      "updated_at": null
     }
   },
-  "last_attempt": "2026-09-19",
+  "last_attempt": "2026-09-20",
   "settings": {
     "stats": {
       "exclude_forks": true,
