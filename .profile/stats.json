@@ -43,12 +43,12 @@
       "updated_at": null,
       "error": "GitHub HTTP 422; check token permissions, rate limits and repository access."
     },
-    "added": {
+    "removed": {
       "value": null,
       "status": "disabled",
       "updated_at": null
     },
-    "removed": {
+    "added": {
       "value": null,
       "status": "disabled",
       "updated_at": null
