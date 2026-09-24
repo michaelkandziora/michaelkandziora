@@ -10,7 +10,7 @@ from typing import Any
 from .model import TOKEN, atomic_write, load_cache, load_config, safe_path, validate_config
 
 FOOTER = ('[Stats definitions](docs/METRICS.md) · Public data only · '
-          '`n/a`: unavailable or disabled · `*`: last successful value; see `.profile/stats.json`.\n')
+          '`n/a`: unavailable or disabled · private repository data excluded · `*`: last successful value; see `.profile/stats.json`.\n')
 
 
 def display_width(text: str) -> int:
@@ -117,7 +117,7 @@ def effective_cache(config: dict[str, Any], cache: dict[str, Any]) -> dict[str, 
     metrics = result.setdefault('metrics', {})
     previous = cache.get('settings', {})
     if previous.get('stats') is not None and previous['stats'] != config['stats']:
-        for key in ('repos', 'stars', 'commits_365d', 'contributed_repos_365d'):
+        for key in ('repos', 'stars', 'stars_received', 'commits_365d', 'contributed_repos_365d'):
             metrics.pop(key, None)
     if not config['code']['enabled'] or (previous.get('code') is not None and previous['code'] != config['code']):
         for key in ('loc', 'added', 'removed'):

@@ -60,9 +60,13 @@ jobs:
 
       - name: Refresh public statistics and generate README
         env:
-          # Optional dedicated API token. Git pushes still use the repository's GITHUB_TOKEN.
-          GH_TOKEN: ${{ secrets.PROFILE_STATS_TOKEN || github.token }}
+          # Owner-scoped PAT for profile-private counters. Never substitute github.token:
+          # it is a repository installation token and can make private activity look like zero.
+          GH_TOKEN: ${{ secrets.PROFILE_STATS_TOKEN }}
         run: |
+          if [ -z "$GH_TOKEN" ]; then
+            echo "::warning::PROFILE_STATS_TOKEN is not configured; owner-only metrics will be n/a."
+          fi
           python profile.py update
           python profile.py check
 

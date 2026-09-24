@@ -11,7 +11,7 @@ from pathlib import Path
 from typing import Any
 
 METRICS = {
-    'repos', 'stars', 'followers', 'following', 'public_gists',
+    'repos', 'stars', 'stars_received', 'starred', 'followers', 'following', 'public_gists',
     'pull_requests', 'commits_365d', 'contributed_repos_365d',
     'loc', 'added', 'removed',
 }

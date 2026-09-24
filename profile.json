@@ -150,8 +150,13 @@
         },
         {
           "id": "stars",
-          "key": "Stars",
-          "value": "{{stats.stars}}"
+          "key": "Stars received",
+          "value": "{{stats.stars_received}}"
+        },
+        {
+          "id": "starred",
+          "key": "Starred repos",
+          "value": "{{stats.starred}}"
         },
         {
           "id": "followers",

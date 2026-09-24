@@ -1,15 +1,17 @@
 # Definitionen der Profilstatistiken
 
-Alle automatischen Zahlen dieses Pakets sind auf **öffentliche GitHub-Daten** begrenzt. „Commits“ wird nicht als undefinierte all-time-Zahl ausgegeben. Der Cache enthält pro Kennzahl Wert, Status und Datum der letzten erfolgreichen Abfrage; Zeitangaben sind UTC.
+Das README ist öffentlich. Private Repository-Namen und private Repository-Inhalte werden deshalb nie ausgegeben. Profilbezogene Zähler, die GitHub bei privater Aktivität gegenüber fremden Tokens ausblendet, werden nur mit einem als Profilinhaber authentifizierten `PROFILE_STATS_TOKEN` akzeptiert. Ohne diesen Token steht dort `n/a` statt eines scheinbar erfolgreichen falschen `0`. „Commits“ wird nicht als undefinierte all-time-Zahl ausgegeben. Der Cache enthält pro Kennzahl Wert, Status und Datum der letzten erfolgreichen Abfrage; Zeitangaben sind UTC.
 
 | Token | Bedeutung |
 |---|---|
 | `{{stats.repos}}` | Anzahl deiner öffentlichen eigenen Repos. Standardmäßig ohne Forks; archivierte eigene Repos sind dabei. Nicht die Repos deiner Organisationen. |
-| `{{stats.stars}}` | Summe der aktuellen `stargazers_count` genau dieser Repos. Keine persönlich vergebenen Stars. |
-| `{{stats.followers}}` | Aktuelle Followerzahl deines öffentlichen Profils. |
-| `{{stats.following}}` | Zahl der Accounts, denen du folgst. |
+| `{{stats.stars_received}}` | Summe der aktuellen `stargazers_count` der gezählten eigenen öffentlichen Repos. |
+| `{{stats.stars}}` | Rückwärtskompatibler Alias für `stars_received`; im mitgelieferten Profil nicht mehr verwendet. |
+| `{{stats.starred}}` | Anzahl öffentlicher Repositories, die du selbst mit einem Stern markiert hast. Erfordert `PROFILE_STATS_TOKEN`, damit private Profilaktivität nicht fälschlich als 0 erscheint. |
+| `{{stats.followers}}` | Aktuelle Followerzahl aus der owner-authentifizierten Profilansicht. Erfordert `PROFILE_STATS_TOKEN`. |
+| `{{stats.following}}` | Zahl der Accounts, denen du folgst. Erfordert `PROFILE_STATS_TOKEN`. |
 | `{{stats.public_gists}}` | Öffentliche Gists laut Profil-API. |
-| `{{stats.pull_requests}}` | Öffentlich indexierte, von dir eröffnete PRs, über alle verfügbaren Zeiträume und Zustände; REST-Suche `type:pr author:michaelkandziora is:public`. Die Suche ist kein unverzögertes Ereignisprotokoll. |
+| `{{stats.pull_requests}}` | Öffentlich indexierte, von dir eröffnete PRs, über alle verfügbaren Zeiträume und Zustände. Die REST-Suche läuft absichtlich **ohne Authentifizierung**, damit private PRs weder mitgezählt noch indirekt veröffentlicht werden. |
 | `{{stats.commits_365d}}` | Öffentliche Commit-Contributions im rollierenden 365-Tage-Fenster bis zum Abrufzeitpunkt laut GitHub ContributionsCollection. **Nicht** alle lokalen Commits aller Branches und **nicht** Lifetime-Commits. |
 | `{{stats.contributed_repos_365d}}` | Anzahl öffentlicher Repos mit deinen Commit-Contributions im selben Fenster, eigene und fremde. Kein vollständiger Zähler aller Issue-/Review-/PR-Aktivitäten. |
 | `{{stats.loc}}` | Optional: Summe der von `cloc` als Code erkannten physischen Zeilen im aktuellen Default-Branch-Snapshot der ausgewählten Repos; ohne die von cloc erkannten Kommentar-/Leerzeilen. |
@@ -19,7 +21,7 @@ Zusätzlich funktionieren `{{username}}`, `{{date}}` (UTC-Datum) und `{{days_sin
 
 ## GitHub-Zählregeln und Grenzen
 
-GitHub-Contributions sind an GitHubs eigene Zuordnungs- und Branch-Regeln gebunden. Der Collector fragt Repository-Gruppen ab und summiert nur Gruppen mit `isPrivate == false`. Auch ein lokal verwendeter Token mit weiteren Rechten führt dadurch nicht zur Ausgabe privater Commit-Zahlen. Es werden keine privaten Repository-Namen angefordert.
+GitHub-Contributions sind an GitHubs eigene Zuordnungs- und Branch-Regeln gebunden. Der Collector akzeptiert diese Abfrage nur, wenn der API-Token über `GET /user` tatsächlich als konfigurierte Profilidentität verifiziert wurde. Das verhindert den bisherigen Fehler, bei dem ein repository-scoped Actions-`GITHUB_TOKEN` bei privater Aktivität einen plausibel aussehenden Nullwert lieferte. Anschließend werden weiterhin ausschließlich Repository-Gruppen mit `isPrivate == false` summiert; private Commit-Zahlen und private Repository-Namen werden nicht veröffentlicht.
 
 Die Commit-Abfrage fordert maximal 100 Repo-Gruppen an und vergleicht die Anzahl mit dem API-Gesamtzähler. Bei Abweichung wird die Kennzahl verworfen und `n/a` oder der letzte erfolgreiche Stand mit `*` angezeigt. Sie wird nicht als vollständige Zahl ausgegeben. Für mehr als 100 Commit-Repos im 365-Tage-Fenster wäre eine zeitlich partitionierte Erweiterung des Collectors erforderlich; das Paket behauptet diese Grenze nicht zu umgehen.
 
@@ -52,3 +54,7 @@ Ohne `--strict` werden erfolgreiche Collector neben fehlgeschlagenen veröffentl
 - [GitHub Profile Contributions](https://docs.github.com/en/account-and-profile/reference/profile-contributions-reference)
 - [cloc](https://github.com/AlDanial/cloc)
 - [git log](https://git-scm.com/docs/git-log)
+
+## Workflow-Authentifizierung
+
+Für die owner-sensitiven Kennzahlen wird im Repository-Secret `PROFILE_STATS_TOKEN` ein GitHub Personal Access Token erwartet, der als `michaelkandziora` authentifiziert ist. Der Workflow verwendet diesen Token **nur für Statistikabfragen**; der Checkout-/Push-Credential bleibt das separate Actions-`GITHUB_TOKEN`. Ein fehlender, falscher oder als GitHub-App/Installation authentifizierter Token erzeugt für Followers, Following, Starred und Contribution-Zähler `n/a`/stale statt `0`.
