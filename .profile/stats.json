@@ -18,7 +18,7 @@
       "updated_at": "2026-09-24"
     },
     "repos": {
-      "value": 15,
+      "value": 16,
       "status": "ok",
       "updated_at": "2026-09-24"
     },
@@ -48,12 +48,12 @@
       "status": "disabled",
       "updated_at": null
     },
-    "loc": {
+    "added": {
       "value": null,
       "status": "disabled",
       "updated_at": null
     },
-    "added": {
+    "loc": {
       "value": null,
       "status": "disabled",
       "updated_at": null
