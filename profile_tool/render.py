@@ -9,7 +9,7 @@ from pathlib import Path
 from typing import Any
 from .model import TOKEN, atomic_write, load_cache, load_config, safe_path, validate_config
 
-FOOTER = ('[Stats definitions](docs/METRICS.md) · Public data only · '
+FOOTER = ('[Stats definitions](docs/METRICS.md) · Public output · '
           '`n/a`: unavailable or disabled · private repository data excluded · `*`: last successful value; see `.profile/stats.json`.\n')
 
 

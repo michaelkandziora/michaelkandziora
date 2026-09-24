@@ -74,7 +74,8 @@ class GithubTests(unittest.TestCase):
         c = FakeClient([{'incomplete_results': False, 'total_count': 5}])
         self.assertEqual(github.pull_request_count(c, 'alice'), 5)
         self.assertEqual(c.calls[0][0], 'public')
-        self.assertNotIn('is%3Apublic', c.calls[0][2])
+        self.assertIn('is%3Apr', c.calls[0][2])
+        self.assertNotIn('type%3Apr', c.calls[0][2])
 
     def test_incomplete_search_rejected(self):
         c = FakeClient([{'incomplete_results': True, 'total_count': 5}])

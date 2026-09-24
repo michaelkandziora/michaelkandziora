@@ -147,7 +147,7 @@ def starred_repository_count(client: Any, username: str) -> int:
 
 
 def pull_request_count(client: Any, username: str) -> int:
-    query = urllib.parse.urlencode({'q': f'type:pr author:{username}', 'per_page': 1})
+    query = urllib.parse.urlencode({'q': f'is:pr author:{username}', 'per_page': 1})
     result = public_request(client, 'GET', '/search/issues?' + query)
     if result.get('incomplete_results') is not False:
         raise APIError('GitHub search was incomplete; refusing a partial PR count.')
