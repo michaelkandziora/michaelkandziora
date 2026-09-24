@@ -58,17 +58,17 @@
       "updated_at": null,
       "error": "PROFILE_STATS_TOKEN is required for owner-only profile metrics for @michaelkandziora."
     },
-    "removed": {
-      "value": null,
-      "status": "disabled",
-      "updated_at": null
-    },
     "added": {
       "value": null,
       "status": "disabled",
       "updated_at": null
     },
     "loc": {
+      "value": null,
+      "status": "disabled",
+      "updated_at": null
+    },
+    "removed": {
       "value": null,
       "status": "disabled",
       "updated_at": null

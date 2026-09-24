@@ -66,4 +66,4 @@
    .#-                                            ++
 ```
 
-[Stats definitions](docs/METRICS.md) · Public data only · `n/a`: unavailable or disabled · private repository data excluded · `*`: last successful value; see `.profile/stats.json`.
+[Stats definitions](docs/METRICS.md) · Public output · `n/a`: unavailable or disabled · private repository data excluded · `*`: last successful value; see `.profile/stats.json`.
