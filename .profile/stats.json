@@ -5,37 +5,37 @@
     "followers": {
       "value": 0,
       "status": "ok",
-      "updated_at": "2026-09-23"
+      "updated_at": "2026-09-24"
     },
     "following": {
       "value": 0,
       "status": "ok",
-      "updated_at": "2026-09-23"
+      "updated_at": "2026-09-24"
     },
     "public_gists": {
       "value": 1,
       "status": "ok",
-      "updated_at": "2026-09-23"
+      "updated_at": "2026-09-24"
     },
     "repos": {
       "value": 15,
       "status": "ok",
-      "updated_at": "2026-09-23"
+      "updated_at": "2026-09-24"
     },
     "stars": {
       "value": 0,
       "status": "ok",
-      "updated_at": "2026-09-23"
+      "updated_at": "2026-09-24"
     },
     "commits_365d": {
       "value": 0,
       "status": "ok",
-      "updated_at": "2026-09-23"
+      "updated_at": "2026-09-24"
     },
     "contributed_repos_365d": {
       "value": 0,
       "status": "ok",
-      "updated_at": "2026-09-23"
+      "updated_at": "2026-09-24"
     },
     "pull_requests": {
       "value": null,
@@ -48,18 +48,18 @@
       "status": "disabled",
       "updated_at": null
     },
-    "added": {
+    "loc": {
       "value": null,
       "status": "disabled",
       "updated_at": null
     },
-    "loc": {
+    "added": {
       "value": null,
       "status": "disabled",
       "updated_at": null
     }
   },
-  "last_attempt": "2026-09-23",
+  "last_attempt": "2026-09-24",
   "settings": {
     "stats": {
       "exclude_forks": true,
