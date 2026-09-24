@@ -37,11 +37,11 @@
    -#+                       -++---+++-#- ...++##+   ..  ++  -#-
   +#+-                       +++#-+++#+#+..-+#++.  .+--.    -#+     Repos ............. {{stats.repos}}  {Commit repos / 365d: {{stats.contributed_repos_365d}}}
  -#-                          -+#+++. .-#- -+++#-    +--  -+#-      Commits (365d) .... {{stats.commits_365d}}
- -#-                      .. ++++#-++...+#- --++++-  --  -++-       Stars ............. {{stats.stars}}
- #+                       .. +++-  +#-.. +#-#- ++++  -.. -#         Followers ......... {{stats.followers}}
--#.                      ... --.   -+#.-. ++++..-#++ ...-+#         Pull Requests ..... {{stats.pull_requests}}
-#+                                   +-.--.#+++- +++   -#+-         Lines of Code ..... {{stats.loc}}  {+{{stats.added}} -{{stats.removed}}}
-#-                                   ..+++-#++++.   -+ ++
+ -#-                      .. ++++#-++...+#- --++++-  --  -++-       Stars received .... {{stats.stars_received}}
+ #+                       .. +++-  +#-.. +#-#- ++++  -.. -#         Starred repos ..... {{stats.starred}}
+-#.                      ... --.   -+#.-. ++++..-#++ ...-+#         Followers ......... {{stats.followers}}
+#+                                   +-.--.#+++- +++   -#+-         Pull Requests ..... {{stats.pull_requests}}
+#-                                   ..+++-#++++.   -+ ++           Lines of Code ..... {{stats.loc}}  {+{{stats.added}} -{{stats.removed}}}
 #-                                    ---+-#+++#-   +++#-
 #-                                    -+---#++#+- ..+-+#
 #-                                    -#+-++#---.  ....++
@@ -66,4 +66,4 @@
    .#-                                            ++
 ```
 
-[Stats definitions](docs/METRICS.md) · Public data only · `n/a`: unavailable or disabled · `*`: last successful value; see `.profile/stats.json`.
+[Stats definitions](docs/METRICS.md) · Public data only · `n/a`: unavailable or disabled · private repository data excluded · `*`: last successful value; see `.profile/stats.json`.

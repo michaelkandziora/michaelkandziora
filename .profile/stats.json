@@ -2,16 +2,6 @@
   "schema_version": 1,
   "username": "michaelkandziora",
   "metrics": {
-    "followers": {
-      "value": 0,
-      "status": "ok",
-      "updated_at": "2026-09-24"
-    },
-    "following": {
-      "value": 0,
-      "status": "ok",
-      "updated_at": "2026-09-24"
-    },
     "public_gists": {
       "value": 1,
       "status": "ok",
@@ -27,12 +17,7 @@
       "status": "ok",
       "updated_at": "2026-09-24"
     },
-    "commits_365d": {
-      "value": 0,
-      "status": "ok",
-      "updated_at": "2026-09-24"
-    },
-    "contributed_repos_365d": {
+    "stars_received": {
       "value": 0,
       "status": "ok",
       "updated_at": "2026-09-24"
@@ -42,6 +27,36 @@
       "status": "missing",
       "updated_at": null,
       "error": "GitHub HTTP 422; check token permissions, rate limits and repository access."
+    },
+    "followers": {
+      "value": null,
+      "status": "missing",
+      "updated_at": null,
+      "error": "PROFILE_STATS_TOKEN is required for owner-only profile metrics for @michaelkandziora."
+    },
+    "following": {
+      "value": null,
+      "status": "missing",
+      "updated_at": null,
+      "error": "PROFILE_STATS_TOKEN is required for owner-only profile metrics for @michaelkandziora."
+    },
+    "starred": {
+      "value": null,
+      "status": "missing",
+      "updated_at": null,
+      "error": "PROFILE_STATS_TOKEN is required for owner-only profile metrics for @michaelkandziora."
+    },
+    "commits_365d": {
+      "value": null,
+      "status": "missing",
+      "updated_at": null,
+      "error": "PROFILE_STATS_TOKEN is required for owner-only profile metrics for @michaelkandziora."
+    },
+    "contributed_repos_365d": {
+      "value": null,
+      "status": "missing",
+      "updated_at": null,
+      "error": "PROFILE_STATS_TOKEN is required for owner-only profile metrics for @michaelkandziora."
     },
     "removed": {
       "value": null,
@@ -89,5 +104,6 @@
         "uv.lock"
       ]
     }
-  }
+  },
+  "collector_version": 2
 }

@@ -35,13 +35,13 @@
     -#-                  ..     +--.  ++.  -+-+####+----+-.-- +#    GitHub Stats
     +#                        ++#+-. .-#- -+- --..       .-   ++    ────────────────────────────────────────────────
    -#+                       -++---+++-#- ...++##+   ..  ++  -#-
-  +#+-                       +++#-+++#+#+..-+#++.  .+--.    -#+     Repos ............. 16  {Commit repos / 365d: 0}
- -#-                          -+#+++. .-#- -+++#-    +--  -+#-      Commits (365d) .... 0
- -#-                      .. ++++#-++...+#- --++++-  --  -++-       Stars ............. 0
- #+                       .. +++-  +#-.. +#-#- ++++  -.. -#         Followers ......... 0
--#.                      ... --.   -+#.-. ++++..-#++ ...-+#         Pull Requests ..... n/a
-#+                                   +-.--.#+++- +++   -#+-         Lines of Code ..... n/a  {+n/a -n/a}
-#-                                   ..+++-#++++.   -+ ++
+  +#+-                       +++#-+++#+#+..-+#++.  .+--.    -#+     Repos ............. 16  {Commit repos / 365d: n/a}
+ -#-                          -+#+++. .-#- -+++#-    +--  -+#-      Commits (365d) .... n/a
+ -#-                      .. ++++#-++...+#- --++++-  --  -++-       Stars received .... 0
+ #+                       .. +++-  +#-.. +#-#- ++++  -.. -#         Starred repos ..... n/a
+-#.                      ... --.   -+#.-. ++++..-#++ ...-+#         Followers ......... n/a
+#+                                   +-.--.#+++- +++   -#+-         Pull Requests ..... n/a
+#-                                   ..+++-#++++.   -+ ++           Lines of Code ..... n/a  {+n/a -n/a}
 #-                                    ---+-#+++#-   +++#-
 #-                                    -+---#++#+- ..+-+#
 #-                                    -#+-++#---.  ....++
@@ -66,4 +66,4 @@
    .#-                                            ++
 ```
 
-[Stats definitions](docs/METRICS.md) · Public data only · `n/a`: unavailable or disabled · `*`: last successful value; see `.profile/stats.json`.
+[Stats definitions](docs/METRICS.md) · Public data only · `n/a`: unavailable or disabled · private repository data excluded · `*`: last successful value; see `.profile/stats.json`.
