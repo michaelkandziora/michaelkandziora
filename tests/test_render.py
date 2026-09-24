@@ -20,6 +20,21 @@ class RenderTests(unittest.TestCase):
     def test_normalization_keeps_every_non_outer_character(self):
         self.assertEqual(render.normalize_art('   A B  \n   # @ \n'), ['A B', '# @'])
 
+    def test_resize_art_is_deterministic_and_bounded(self):
+        original = render.normalize_art(self.art)
+        first = render.resize_art(original, 32, 20)
+        second = render.resize_art(original, 32, 20)
+        self.assertEqual(first, second)
+        self.assertEqual(len(first), 20)
+        self.assertLessEqual(max(map(len, first)), 32)
+        self.assertTrue(any(line.strip() for line in first))
+
+    def test_art_dimensions_must_be_configured_together(self):
+        c = copy.deepcopy(self.config)
+        c['layout']['art_width'] = 64
+        with self.assertRaises(ValueError):
+            model.validate_config(c)
+
     def test_alignment_preserves_portrait(self):
         text = render.render_template(self.config, self.art)
         rows = text.split('```text\n', 1)[1].split('\n```', 1)[0].splitlines()

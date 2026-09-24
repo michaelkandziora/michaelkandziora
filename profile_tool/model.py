@@ -106,6 +106,11 @@ def validate_config(config: dict[str, Any]) -> None:
     for key, default, low, high in [('gap', 4, 1, 30), ('label_width', 18, 1, 80),
                                   ('rule_width', 48, 10, 160), ('top_padding', 1, 0, 100)]:
         bounded_int(layout.get(key, default), f'layout.{key}', low, high)
+    for key in ('art_width', 'art_height'):
+        if key in layout:
+            bounded_int(layout[key], f'layout.{key}', 16, 160)
+    if ('art_width' in layout) != ('art_height' in layout):
+        raise ValueError('layout.art_width and layout.art_height must be configured together.')
     settings = config.get('stats', {})
     if settings.get('days') != 365:
         raise ValueError('stats.days must be 365; the metric names explicitly describe this period.')

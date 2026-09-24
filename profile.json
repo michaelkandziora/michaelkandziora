@@ -7,7 +7,9 @@
     "gap": 4,
     "label_width": 18,
     "rule_width": 48,
-    "top_padding": 1
+    "top_padding": 1,
+    "art_width": 64,
+    "art_height": 63
   },
   "stats": {
     "exclude_forks": true,

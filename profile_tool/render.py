@@ -34,10 +34,59 @@ def normalize_art(text: str) -> list[str]:
     return [line[margin:].rstrip() for line in lines]
 
 
+_ART_DENSITY = {' ': 0.0, '.': 0.20, '-': 0.38, '+': 0.68, '#': 1.0}
+_ART_PALETTE = ((0.10, ' '), (0.28, '.'), (0.48, '-'), (0.73, '+'), (float('inf'), '#'))
+
+
+def _art_density(character: str) -> float:
+    return _ART_DENSITY.get(character, 0.55 if character.strip() else 0.0)
+
+
+def resize_art(lines: list[str], target_width: int, target_height: int) -> list[str]:
+    """Area-resample ASCII art while preserving sparse edges and tonal density."""
+    source_height = len(lines)
+    source_width = max(map(len, lines))
+    canvas = [line.ljust(source_width) for line in lines]
+    result: list[str] = []
+
+    for out_y in range(target_height):
+        y0 = out_y * source_height / target_height
+        y1 = (out_y + 1) * source_height / target_height
+        row: list[str] = []
+        for out_x in range(target_width):
+            x0 = out_x * source_width / target_width
+            x1 = (out_x + 1) * source_width / target_width
+            weighted = area = peak = 0.0
+
+            for source_y in range(int(y0), min(source_height, int(y1) + 1)):
+                overlap_y = min(y1, source_y + 1) - max(y0, source_y)
+                if overlap_y <= 0:
+                    continue
+                for source_x in range(int(x0), min(source_width, int(x1) + 1)):
+                    overlap_x = min(x1, source_x + 1) - max(x0, source_x)
+                    if overlap_x <= 0:
+                        continue
+                    cell_area = overlap_x * overlap_y
+                    density = _art_density(canvas[source_y][source_x])
+                    weighted += density * cell_area
+                    area += cell_area
+                    peak = max(peak, density)
+
+            average = weighted / area if area else 0.0
+            density = average * 0.72 + peak * 0.28
+            row.append(next(character for threshold, character in _ART_PALETTE
+                            if density < threshold))
+        result.append(''.join(row).rstrip())
+
+    return result
+
+
 def render_template(config: dict[str, Any], art_text: str) -> str:
     validate_config(config)
     art = normalize_art(art_text)
     layout = config['layout']
+    if 'art_width' in layout:
+        art = resize_art(art, layout['art_width'], layout['art_height'])
     width = max(map(display_width, art))
     label_width = max(layout['label_width'],
                       max((display_width(row['key']) for s in config['sections'] for row in s['rows']), default=0))
