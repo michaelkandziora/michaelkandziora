@@ -4,32 +4,28 @@
   "metrics": {
     "public_gists": {
       "value": 1,
-      "status": "stale",
-      "updated_at": "2026-09-30",
-      "error": "GitHub HTTP 403; check token permissions, rate limits and repository access."
+      "status": "ok",
+      "updated_at": "2026-10-02"
     },
     "repos": {
       "value": 17,
-      "status": "stale",
-      "updated_at": "2026-09-30",
-      "error": "GitHub HTTP 403; check token permissions, rate limits and repository access."
+      "status": "ok",
+      "updated_at": "2026-10-02"
     },
     "stars": {
       "value": 0,
-      "status": "stale",
-      "updated_at": "2026-09-30",
-      "error": "GitHub HTTP 403; check token permissions, rate limits and repository access."
+      "status": "ok",
+      "updated_at": "2026-10-02"
     },
     "stars_received": {
       "value": 0,
-      "status": "stale",
-      "updated_at": "2026-09-30",
-      "error": "GitHub HTTP 403; check token permissions, rate limits and repository access."
+      "status": "ok",
+      "updated_at": "2026-10-02"
     },
     "pull_requests": {
       "value": 28,
       "status": "ok",
-      "updated_at": "2026-10-01"
+      "updated_at": "2026-10-02"
     },
     "followers": {
       "value": null,
@@ -66,18 +62,18 @@
       "status": "disabled",
       "updated_at": null
     },
-    "removed": {
+    "added": {
       "value": null,
       "status": "disabled",
       "updated_at": null
     },
-    "added": {
+    "removed": {
       "value": null,
       "status": "disabled",
       "updated_at": null
     }
   },
-  "last_attempt": "2026-10-01",
+  "last_attempt": "2026-10-02",
   "settings": {
     "stats": {
       "exclude_forks": true,
