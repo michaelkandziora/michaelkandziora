@@ -4,32 +4,28 @@
   "metrics": {
     "public_gists": {
       "value": 1,
-      "status": "stale",
-      "updated_at": "2026-10-06",
-      "error": "GitHub HTTP 403; check token permissions, rate limits and repository access."
+      "status": "ok",
+      "updated_at": "2026-10-08"
     },
     "repos": {
       "value": 17,
-      "status": "stale",
-      "updated_at": "2026-10-06",
-      "error": "GitHub HTTP 403; check token permissions, rate limits and repository access."
+      "status": "ok",
+      "updated_at": "2026-10-08"
     },
     "stars": {
       "value": 0,
-      "status": "stale",
-      "updated_at": "2026-10-06",
-      "error": "GitHub HTTP 403; check token permissions, rate limits and repository access."
+      "status": "ok",
+      "updated_at": "2026-10-08"
     },
     "stars_received": {
       "value": 0,
-      "status": "stale",
-      "updated_at": "2026-10-06",
-      "error": "GitHub HTTP 403; check token permissions, rate limits and repository access."
+      "status": "ok",
+      "updated_at": "2026-10-08"
     },
     "pull_requests": {
       "value": 28,
       "status": "ok",
-      "updated_at": "2026-10-07"
+      "updated_at": "2026-10-08"
     },
     "followers": {
       "value": null,
@@ -61,11 +57,6 @@
       "updated_at": null,
       "error": "PROFILE_STATS_TOKEN is required for owner-only profile metrics for @michaelkandziora."
     },
-    "loc": {
-      "value": null,
-      "status": "disabled",
-      "updated_at": null
-    },
     "removed": {
       "value": null,
       "status": "disabled",
@@ -75,9 +66,14 @@
       "value": null,
       "status": "disabled",
       "updated_at": null
+    },
+    "loc": {
+      "value": null,
+      "status": "disabled",
+      "updated_at": null
     }
   },
-  "last_attempt": "2026-10-07",
+  "last_attempt": "2026-10-08",
   "settings": {
     "stats": {
       "exclude_forks": true,
