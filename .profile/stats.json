@@ -5,27 +5,27 @@
     "public_gists": {
       "value": 1,
       "status": "ok",
-      "updated_at": "2026-10-08"
+      "updated_at": "2026-10-09"
     },
     "repos": {
       "value": 17,
       "status": "ok",
-      "updated_at": "2026-10-08"
+      "updated_at": "2026-10-09"
     },
     "stars": {
       "value": 0,
       "status": "ok",
-      "updated_at": "2026-10-08"
+      "updated_at": "2026-10-09"
     },
     "stars_received": {
       "value": 0,
       "status": "ok",
-      "updated_at": "2026-10-08"
+      "updated_at": "2026-10-09"
     },
     "pull_requests": {
       "value": 28,
       "status": "ok",
-      "updated_at": "2026-10-08"
+      "updated_at": "2026-10-09"
     },
     "followers": {
       "value": null,
@@ -62,18 +62,18 @@
       "status": "disabled",
       "updated_at": null
     },
-    "added": {
+    "loc": {
       "value": null,
       "status": "disabled",
       "updated_at": null
     },
-    "loc": {
+    "added": {
       "value": null,
       "status": "disabled",
       "updated_at": null
     }
   },
-  "last_attempt": "2026-10-08",
+  "last_attempt": "2026-10-09",
   "settings": {
     "stats": {
       "exclude_forks": true,
