@@ -5,27 +5,27 @@
     "public_gists": {
       "value": 1,
       "status": "ok",
-      "updated_at": "2026-11-02"
+      "updated_at": "2026-11-03"
     },
     "repos": {
       "value": 17,
       "status": "ok",
-      "updated_at": "2026-11-02"
+      "updated_at": "2026-11-03"
     },
     "stars": {
       "value": 0,
       "status": "ok",
-      "updated_at": "2026-11-02"
+      "updated_at": "2026-11-03"
     },
     "stars_received": {
       "value": 0,
       "status": "ok",
-      "updated_at": "2026-11-02"
+      "updated_at": "2026-11-03"
     },
     "pull_requests": {
       "value": 28,
       "status": "ok",
-      "updated_at": "2026-11-02"
+      "updated_at": "2026-11-03"
     },
     "followers": {
       "value": null,
@@ -57,12 +57,12 @@
       "updated_at": null,
       "error": "PROFILE_STATS_TOKEN is required for owner-only profile metrics for @michaelkandziora."
     },
-    "added": {
+    "removed": {
       "value": null,
       "status": "disabled",
       "updated_at": null
     },
-    "removed": {
+    "added": {
       "value": null,
       "status": "disabled",
       "updated_at": null
@@ -73,7 +73,7 @@
       "updated_at": null
     }
   },
-  "last_attempt": "2026-11-02",
+  "last_attempt": "2026-11-03",
   "settings": {
     "stats": {
       "exclude_forks": true,
